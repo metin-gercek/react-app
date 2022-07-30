@@ -16,14 +16,20 @@ export default class CartSummary extends Component {
           Your Cart - {this.props.cart.length}
         </a>
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            {this.props.cart.map((cartItem) => (
+          {this.props.cart.map((cartItem) => (
+            <li>
               <a key={cartItem.product.id} className="dropdown-item" href="/">
                 {cartItem.product.productName} -
                 <Badge color="success">{cartItem.quantity}</Badge>
               </a>
-            ))}
-          </li>
+              <Badge
+                color="danger"
+                onClick={() => this.props.removeFromCart(cartItem.product)}
+              >
+                X
+              </Badge>
+            </li>
+          ))}
         </ul>
       </li>
     );
@@ -33,9 +39,15 @@ export default class CartSummary extends Component {
       <NavItem>
         <NavLink>Empty Card</NavLink>
       </NavItem>
-    )
+    );
   }
   render() {
-    return <div>{this.props.cart.length>0?this.renderSummary():this.renderEmptyCart()}</div>;
+    return (
+      <div>
+        {this.props.cart.length > 0
+          ? this.renderSummary()
+          : this.renderEmptyCart()}
+      </div>
+    );
   }
 }

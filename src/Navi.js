@@ -41,7 +41,7 @@ export default class Navi extends Component {
                     Pricing
                   </a>
                 </li>
-                <CartSummary cart={this.props.cart}/>
+                <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
               </ul>
             </div>
           </div>
