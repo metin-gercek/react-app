@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Badge, NavItem, NavLink } from "reactstrap";
+import {Link} from 'react-router-dom';
 
 export default class CartSummary extends Component {
   renderSummary() {
@@ -30,6 +31,7 @@ export default class CartSummary extends Component {
               </Badge>
             </li>
           ))}
+          <Link to="cart">Go to Cart</Link>
         </ul>
       </li>
     );
