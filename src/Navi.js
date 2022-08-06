@@ -32,8 +32,8 @@ export default class Navi extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Features
+                  <a className="nav-link" href="/form1">
+                    Form 1
                   </a>
                 </li>
                 <li className="nav-item">
