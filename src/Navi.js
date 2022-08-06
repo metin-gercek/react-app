@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CartSummary from "./CartSummary";
 
+import { Link } from "react-router-dom";
+import { NavLink, NavItem } from "reactstrap";
 export default class Navi extends Component {
   render() {
     return (
@@ -36,12 +38,20 @@ export default class Navi extends Component {
                     Form 1
                   </a>
                 </li>
+                <NavItem>
+                  <NavLink>
+                    <Link to="form2">Form 2</Link>
+                  </NavLink>
+                </NavItem>
                 <li className="nav-item">
                   <a className="nav-link" href="/">
                     Pricing
                   </a>
                 </li>
-                <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
+                <CartSummary
+                  removeFromCart={this.props.removeFromCart}
+                  cart={this.props.cart}
+                />
               </ul>
             </div>
           </div>
